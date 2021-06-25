@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+
+			}
+			.col100{
+				width:100%;
+			}
+			.col30{
+				width: 30%;
+			}
+			.col10{
+				width: 10%;
+			}
+			.grid-cell{
+				display: inline-block;
+				vertical-align: top;
+				padding: 1%;
+			}
+			.grid-header1{
+				text-align: center;
+				font-size: 6em;
+				font-style: bold;
+			}
+			.grid-body{
+
+			}
+			.grid-container{
+				text-align: center;
+			}
+			.item-container{
+			}
+			.item-header{
+			}
+			.item-picture{
+				max-width: 100%;
+			}
+			.item-name{
+				font-size: 4em;
+				font-style: bold;
+			}
+			.item-description{
+				text-align: left;
+				font-size: 1.5em;
+			}
+			.item-price{
+				text-align: right;
+				font-size: 2em;
+			}
+
+
+			.slideshow-container{
+				text-align: center;
+
+			}
+			.slideshow-button-left{
+
+			}
+			.slideshow-button-right{
+
+			}
+			.slideshow-button{
+
+			}
+			.slideshow-view{
+
+			}
+			.slideshow-wrapper{
+
+			}
+
+			.card-container{
+				display: inline-block;
+				vertical-align: top;
+				width: calc((100% * 3)/100);
+			}
+
+			.card-picture{
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header" class="grid-header1">
+			<p>Corners To-Go</p>
+			<img src="logo.jpg">
+		</div>
+
+		<div id="two" class="col100"></div>
+		<div id="one" class="col100"></div>
+
+		<script src="./Grid.js"></script>
+		<script src="./Item.js"></script>
+		<script src="./SlideShow.js"></script>
+		<script src="./Card.js"></script>
+
+		<script>
+			let pics = ["./hi.jpg", "./lol.jpg", "./yo.jpg"];
+			let slideshow = new SlideShow(pics);
+			document.getElementById("two").appendChild(slideshow.element);
+
+
+			let menuGrid = new Grid("-- Menu --");
+			document.getElementById("one").appendChild(menuGrid.element);
+			menuGrid.addItem();
+
+		</script>
+
+	</body>
+</html>

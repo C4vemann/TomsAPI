@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.col100{
+				width:100%;
+			}
+			.box{
+				margin-top: 50px;
+				height: 600px;
+				background: blue;
+
+			}
+			.slideshow-container{
+
+			}
+			.slideshow-button-left{
+
+			}
+			.slideshow-button-right{
+
+			}
+			.slideshow-button{
+
+			}
+			.slideshow-view{
+
+			}
+			.slideshow-wrapper{
+
+			}
+
+			.card-container{
+				display: inline-block;
+
+			}
+			.card-picture{
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one" class="col100 box">
+		</div>
+		<script src="./SlideShow.js"></script>
+		<script src="./Card.js"></script>
+		<script>
+			let files = ["hi.jpg","lol.jpg","yo.jpg"];
+			let slideshow = new SlideShow(files);
+			document.getElementById("one").appendChild(slideshow.element);
+		</script>
+	</body>
+</html>
