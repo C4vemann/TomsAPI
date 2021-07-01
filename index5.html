@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				overflow-x: hidden;
+			}
+			img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+			#one{
+				background:blue;
+				height: 600px;
+				position: relative;
+				left: 0;
+			}
+			.box{
+				text-align: center;
+				background: black;
+				height: 100%;
+				float: left;
+				display: flex;
+    			align-items: center;
+    			justify-content: center
+			}
+			.button{
+				width: 100px;
+				height: 100px;
+				background: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one" style="left:0">
+
+		</div>
+		<div id="button-left" class="button">
+		</div>
+		<div id="button-right" class="button">
+		</div>
+
+		<script>
+
+			document.getElementById("button-left").onclick = () => {
+				if(parseInt(document.getElementById("one").style.left) + window.innerWidth > 0){
+					console.log("left error");
+				} else{
+					document.getElementById("one").style.left = (parseInt(document.getElementById("one").style.left) + window.innerWidth) + "px";
+					console.log("left" + document.getElementById("one").style.left);
+				}
+			};
+			document.getElementById("button-right").onclick = () => {
+				if(parseInt(document.getElementById("one").style.left) - window.innerWidth <= -(3 * window.innerWidth)){
+					console.log("right error");
+				}else{
+					document.getElementById("one").style.left = (parseInt(document.getElementById("one").style.left) - window.innerWidth) + "px";
+					console.log("right" + document.getElementById("one").style.left);
+
+				}
+			};
+
+			document.getElementById("one").style.width = (3 * window.innerWidth) + "px";
+
+			window.onresize = function(){
+				document.getElementById("one").style.width = (3 * window.innerWidth) + "px";
+				console.log("hi");
+				for(let box of document.getElementsByClassName("box")){
+					box.style.width = window.innerWidth + "px";
+				}
+			}
+
+			let x = (pic) => {
+				let wrapper = document.createElement("div");
+				wrapper.setAttribute("class", "box");
+				wrapper.setAttribute("style", "width:" + window.innerWidth + "px;");
+				let img = document.createElement("img");
+				img.setAttribute("src", pic);
+				wrapper.appendChild(img);
+				document.getElementById("one").appendChild(wrapper);
+			};
+
+			x('./hi.jpg');
+			x('./yo.jpg');
+			x('./lol.jpg');
+		</script>
+	</body>
+</html>
